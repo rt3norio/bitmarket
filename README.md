@@ -1,37 +1,66 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <img src="./banner-github.png" alt="BitMarket Banner" />
+  <h1 align="center">BitMarket</h1>
+  <p align="center">A Bitcoin Lightning Network Marketplace built with NestJS</p>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+<p align="center">
+  <a href="LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" /></a>
+  <a href="https://nestjs.com" target="_blank"><img src="https://img.shields.io/badge/Made%20with-NestJS-ea2845.svg" alt="Made with NestJS" /></a>
+  <a href="https://nodejs.org" target="_blank"><img src="https://img.shields.io/badge/Node.js-%3E%3D18-brightgreen.svg" alt="Node.js >= 18" /></a>
+  <a href="https://www.postgresql.org" target="_blank"><img src="https://img.shields.io/badge/Database-PostgreSQL-336791.svg" alt="Database PostgreSQL" /></a>
+  <a href="https://lightning.network" target="_blank"><img src="https://img.shields.io/badge/Payments-Lightning%20Network-F7931A.svg" alt="Payments Lightning Network" /></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## 📋 Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+BitMarket is a marketplace platform that supports Bitcoin Lightning Network payments, allowing users to buy and sell products with cryptocurrency or traditional fiat currencies.
 
-## Project setup
+### ✨ Features
+
+- 🔐 **User Authentication**: Secure JWT-based authentication system
+- 📦 **Product Management**: List, view, create, update and delete products
+- 🛒 **Order Management**: Create and manage orders
+- 💰 **Multiple Currency Support**: Prices in BRL, USD, or SATS (Bitcoin satoshis)
+- ⚡ **Bitcoin Lightning Network Integration**: For fast and low-cost transactions
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (>=18.x)
+- [PNPM](https://pnpm.io/) (>=8.x)
+- [PostgreSQL](https://www.postgresql.org/) (>=14.x)
+
+### Environment Setup
+
+1. Clone the repository
+2. Create a `.env` file in the root directory based on the following template:
+
+```bash
+# Database Configuration
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_NAME=bitmarket
+
+# JWT Configuration
+JWT_SECRET=your_jwt_secret_should_be_complex_and_unique
+JWT_EXPIRATION=1d
+
+# Server Configuration
+PORT=3000
+NODE_ENV=development
+```
+
+### Installation
 
 ```bash
 $ pnpm install
 ```
 
-## Compile and run the project
+### Running the app
 
 ```bash
 # development
@@ -44,7 +73,7 @@ $ pnpm run start:dev
 $ pnpm run start:prod
 ```
 
-## Run tests
+## 🧪 Testing
 
 ```bash
 # unit tests
@@ -57,42 +86,50 @@ $ pnpm run test:e2e
 $ pnpm run test:cov
 ```
 
-## Deployment
+## 📡 API Documentation
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+Once the application is running, you can access the Swagger API documentation at:
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ pnpm install -g @nestjs/mau
-$ mau deploy
+```
+http://localhost:3000/api
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+### Available Endpoints
 
-## Resources
+The API includes endpoints for:
 
-Check out a few resources that may come in handy when working with NestJS:
+- **Authentication**: Register, login, and JWT protected routes
+- **Products**: Create, read, update, and delete products
+- **Orders**: Manage purchase orders
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+## 📁 Project Structure
 
-## Support
+```
+src/
+├── auth/           # Authentication module (JWT, strategies, guards)
+├── users/          # User management
+├── products/       # Product catalog and management
+├── orders/         # Order processing
+└── main.ts         # Application entry point
+```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## 🚢 Deployment
 
-## Stay in touch
+For production deployment:
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+1. Set `NODE_ENV=production` in your environment
+2. Ensure proper security settings for JWT_SECRET
+3. Configure a production-ready database
+4. Run `pnpm run build` followed by `pnpm run start:prod`
 
-## License
+## 🛠️ Development Tools
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+- **REST Client**: The project includes Bruno API client files in the `rest-client` directory for testing endpoints
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

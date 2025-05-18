@@ -1,0 +1,27 @@
+meta {
+  name: create-product
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/products
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{access_token}}
+}
+
+body:json {
+  {
+    "title": "Smartphone XYZ",
+    "description": "Um smartphone de última geração com recursos avançados",
+    "price": 1999.99,
+    "currency": "BRL",
+    "stockQuantity": 10,
+    "condition": "NEW"
+  }
+}

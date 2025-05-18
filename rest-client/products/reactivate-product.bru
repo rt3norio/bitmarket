@@ -1,0 +1,18 @@
+meta {
+  name: reactivate-product
+  type: http
+  seq: 9
+}
+
+patch {
+  url: http://localhost:3000/products/{{product_id}}/reactivate
+  auth: bearer
+}
+
+headers {
+  Authorization: Bearer {{access_token}}
+}
+
+vars:pre-request {
+  product_id: "uuid-do-produto"
+}

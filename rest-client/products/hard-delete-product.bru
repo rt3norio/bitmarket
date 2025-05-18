@@ -1,0 +1,18 @@
+meta {
+  name: hard-delete-product
+  type: http
+  seq: 8
+}
+
+delete {
+  url: http://localhost:3000/products/{{product_id}}/permanent
+  auth: bearer
+}
+
+headers {
+  Authorization: Bearer {{access_token}}
+}
+
+vars:pre-request {
+  product_id: "uuid-do-produto"
+}

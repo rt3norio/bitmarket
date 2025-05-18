@@ -1,0 +1,18 @@
+meta {
+  name: delete-product
+  type: http
+  seq: 7
+}
+
+delete {
+  url: http://localhost:3000/products/{{product_id}}
+  auth: bearer
+}
+
+headers {
+  Authorization: Bearer {{access_token}}
+}
+
+vars:pre-request {
+  product_id: "uuid-do-produto"
+}

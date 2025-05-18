@@ -1,0 +1,29 @@
+meta {
+  name: update-product
+  type: http
+  seq: 6
+}
+
+patch {
+  url: http://localhost:3000/products/{{product_id}}
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{access_token}}
+}
+
+body:json {
+  {
+    "title": "Smartphone XYZ Atualizado",
+    "description": "Descrição atualizada do smartphone",
+    "price": 1899.99,
+    "stockQuantity": 15
+  }
+}
+
+vars:pre-request {
+  product_id: "uuid-do-produto"
+}

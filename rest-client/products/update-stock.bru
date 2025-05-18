@@ -1,0 +1,26 @@
+meta {
+  name: update-stock
+  type: http
+  seq: 10
+}
+
+patch {
+  url: http://localhost:3000/products/{{product_id}}/stock
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{access_token}}
+}
+
+body:json {
+  {
+    "quantity": 20
+  }
+}
+
+vars:pre-request {
+  product_id: "uuid-do-produto"
+}
